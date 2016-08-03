@@ -63,8 +63,10 @@ public class WiFiPortalController {
                     + "    </head>\n"
                     + "    <body>\n"
                     + "        <form action=\"http://192.168.1.109:8910/wifidog/login\" method=\"POST\">\n"
-                    + "            <input type=\"text\" id=\"username\" name=\"username\" placeholder=\"Username\">\n"
-                    + "            <input type=\"password\" id=\"password\" name=\"password\" placeholder=\"Password\">\n"
+                    + "            <input type=\"text\" id=\"username\" name=\"username\" "
+                    + "                   placeholder=\"Username\">\n"
+                    + "            <input type=\"password\" id=\"password\" name=\"password\" "
+                    + "                   placeholder=\"Password\">\n"
                     + "            <button type=\"submit\">登录</button>\n"
                     + "        </form>\n"
                     + "    </body>\n"
@@ -131,7 +133,8 @@ public class WiFiPortalController {
     }
 
     private void logReq(final HttpServletRequest request) {
-        final StringBuilder reqBuilder = new StringBuilder("\nrequest [\n  URI=").append(request.getRequestURI())
+        final StringBuilder reqBuilder = new StringBuilder("\nrequest [\n  URI=")
+                .append(request.getRequestURI())
                 .append("\n  method=").append(request.getMethod())
                 .append("\n  remoteAddr=").append(request.getRemoteAddr());
 
