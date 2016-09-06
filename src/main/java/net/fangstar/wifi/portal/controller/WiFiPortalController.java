@@ -38,11 +38,16 @@ public class WiFiPortalController {
      * WiFiDog 网关地址.
      */
     private static final String GATEWAY_ADDR = Server.CONF.getString("gateway.addr");
+    
+    /**
+     * Portal 地址.
+     */
+    private static final String PORTAL_ADDR = Server.CONF.getString("portal.addr");
 
     /**
      * Test token.
      */
-    private static final String TOKEN = "22";
+    private static final String TOKEN = "33";
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public void showLogin(final HttpServletRequest request, final HttpServletResponse response) {
@@ -62,7 +67,7 @@ public class WiFiPortalController {
                     + "        <title>登录 - Portal</title>\n"
                     + "    </head>\n"
                     + "    <body>\n"
-                    + "        <form action=\"http://192.168.1.109:8910/wifidog/login\" method=\"POST\">\n"
+                    + "        <form action=\"" + PORTAL_ADDR + "/wifidog/login\" method=\"POST\">\n"
                     + "            <input type=\"text\" id=\"username\" name=\"username\" "
                     + "                   placeholder=\"Username\">\n"
                     + "            <input type=\"password\" id=\"password\" name=\"password\" "
